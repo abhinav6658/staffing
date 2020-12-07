@@ -1139,36 +1139,35 @@ Class Authentication extends CI_Controller {
 				);
 				$result = $this->authentication_model->login_process($data);
 				
-				echo json_encode($result);
 
-				// if($result) {
+				if($result) {
 
-				// 	if($this->session->userdata['user_type']==2)
-				// 	{
-				// 		redirect('dashboardw2');
-				// 	}
-				// 	else if($this->session->userdata['user_type']==1)
-				// 	{
-				// 		// echo "sole"; die;
-				// 		redirect('dashboardsole');
-				// 	}
-				// 	else if($this->session->userdata['user_type']==3)
-				// 	{
-				// 		// echo "sole"; die;
-				// 		redirect('dashboardc2c');
-				// 	}
+					if($this->session->userdata['user_type']==2)
+					{
+						redirect('dashboardw2');
+					}
+					else if($this->session->userdata['user_type']==1)
+					{
+						// echo "sole"; die;
+						redirect('dashboardsole');
+					}
+					else if($this->session->userdata['user_type']==3)
+					{
+						// echo "sole"; die;
+						redirect('dashboardc2c');
+					}
 
-				// 	else
-				// 	{
-				// 		redirect('dashboard');
-				// 	}
-				// } else {
-				// 	$data = array(
-				// 		'error_msg' => 'Invalid Username or Password. Please try again.'
-				// 	);
-				// 	//redirect(base_url(), $data);
-				// 	$this->load->view('authentication/login', $data);
-				// }
+					else
+					{
+						redirect('dashboard');
+					}
+				} else {
+					$data = array(
+						'error_msg' => 'Invalid Username or Password. Please try again.'
+					);
+					//redirect(base_url(), $data);
+					$this->load->view('authentication/login', $data);
+				}
 			}
 		// } else {
 		// 	$this->session->sess_destroy();

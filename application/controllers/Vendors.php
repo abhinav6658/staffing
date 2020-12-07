@@ -243,11 +243,11 @@ Class Vendors extends CI_Controller {
 		$data['title'] = 'Consultants List';
 		$data['breathcum'] = 'Consultants List';
 		$vendor_id = $this->uri->segment(2);
-		// echo $vendor_id; die;
-		$data['vendor_data'] = $this->global_model->get_data('panel_vendortbl', array('vendor_id' => $vendor_id, 'order_by' => 'vendor_id' ));
-		 $vendor_guid = $data['vendor_data'][0]['guid'];
 
-		$data['vendor_consultant'] = $this->global_model->get_data('panel_emp_vendor_mappingtbl', array('vendor_id' => $vendor_guid, 'is_current' => '1', 'order_by' => 'id'));	
+		$data['vendor_data'] = $this->global_model->get_data('panel_vendortbl', array('vendor_id' => $vendor_id, 'order_by' => 'vendor_id' ));
+		$vendor_guid = $data['vendor_data'][0]['guid'];
+		
+		$data['vendor_consultant'] = $this->global_model->get_data('panel_emp_vendor_mappingtbl', array('vendor_id' => $vendor_guid,'is_current' => '1', 'order_by' => 'id'));	
 		$cosult_index = 0;
 		$last_con_guid = '';
 		foreach ($data['vendor_consultant'] as $row) {

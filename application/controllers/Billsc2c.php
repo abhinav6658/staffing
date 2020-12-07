@@ -79,13 +79,13 @@ class Billsc2c extends CI_Controller
 
 	public function delete_bills() {
 		if($this->input->get('id')){
-			
+
 			$del_data = $this->global_model->get_data('panel_billstbl', array("bill_id"=>$this->input->get('id'),'order_by' => 'bill_id'));
           
            $path = $del_data[0]['file_path'];
 
            delete_files($path, true , false, 1);
-
+           
             $this->global_model->del_data('panel_master_billstbl',array("bill_id"=>$this->input->get('id')));
             $message    = array("1","Successfully Deleted");
         }
@@ -179,7 +179,7 @@ class Billsc2c extends CI_Controller
 			$file_ext = array_filter(explode('.', $_FILES['fileupload']['name']));
 			$fileExt = array_pop($file_ext);
 			//print_r($fileExt); die();
-			if($fileExt == 'pdf' || $fileExt == 'docx' || $fileExt == 'doc' || $fileExt == 'xlsx' || $fileExt == 'csv' || $fileExt == 'xls') {
+			if($fileExt == 'pdf' || $fileExt == 'docx' || $fileExt == 'doc' || $fileExt == 'xlsx' || $fileExt == 'csv' || $fileExt == 'xls' || $fileExt == 'jpeg' || $fileExt == 'jpg' || $fileExt == 'png' || $fileExt == 'JPG' || $fileExt == 'JPEG' || $fileExt == 'PNG') {
 
 				$bill = $this->global_model->set_data('panel_master_billstbl', $bills_data);
 
@@ -206,15 +206,15 @@ class Billsc2c extends CI_Controller
 				$file_name = $guid;	
 
 				if($path == '') {
-					if (!file_exists($_SERVER['DOCUMENT_ROOT'].'/staffing_panel/assets/uploads/'.$file_id)) {
-						mkdir($_SERVER['DOCUMENT_ROOT'].'/staffing_panel/assets/uploads/'.$file_id, 0777 , true);
+					if (!file_exists($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/'.$file_id)) {
+						mkdir($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/'.$file_id, 0777 , true);
 					}
-					$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/staffing_panel/assets/uploads/'.$file_id;
+					$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/assets/uploads/'.$file_id;
 				} else {
 					$config['upload_path'] = $path;
 				}
 
-				$config['allowed_types'] = 'pdf|docx|doc|xlsx|csv|xls';
+				$config['allowed_types'] = 'pdf|docx|doc|xlsx|csv|xls|jpeg|jpg|png|JPG|JPEG|PNG';
 				$config['overwrite'] = false;
 				$config['remove_spaces'] = TRUE;
 				$config['file_name'] = $file_name;

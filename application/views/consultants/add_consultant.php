@@ -511,8 +511,6 @@
 	});
 
 	jQuery(".submit").click(function(e) {
-
-		
 		e.preventDefault();
 		var client         = jQuery("#client_name").val();
 		var organisation   = jQuery("#org_id").val();

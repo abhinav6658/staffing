@@ -537,10 +537,10 @@ Class Documents extends CI_Controller {
 			// $file_name = $guid;	
 			$file_name = $_FILES['file']['name'];		
 			if($path == '') {
-				if (!file_exists($_SERVER['DOCUMENT_ROOT'].'/staffing_panel/assets/uploads/'.$user_id)) {
-					mkdir($_SERVER['DOCUMENT_ROOT'].'/staffing_panel/assets/uploads/'.$user_id, 0777 , true);
+				if (!file_exists($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/'.$user_id)) {
+					mkdir($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/'.$user_id, 0777 , true);
 				}
-				$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/staffing_panel/assets/uploads/'.$user_id;
+				$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/assets/uploads/'.$user_id;
 			} else {
 				$config['upload_path'] = $path;
 			}
@@ -634,10 +634,10 @@ Class Documents extends CI_Controller {
 			// echo $file_name; die;
 			// $file_name = $guid;			
 			if($path == '') {
-				if (!file_exists($_SERVER['DOCUMENT_ROOT'].'/staffing_panel/assets/uploads/'.$user_id)) {
-					mkdir($_SERVER['DOCUMENT_ROOT'].'/staffing_panel/assets/uploads/'.$user_id, 0777 , true);
+				if (!file_exists($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/'.$user_id)) {
+					mkdir($_SERVER['DOCUMENT_ROOT'].'/assets/uploads/'.$user_id, 0777 , true);
 				}
-				$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/staffing_panel/assets/uploads/'.$user_id;
+				$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'].'/assets/uploads/'.$user_id;
 			} else {
 				$config['upload_path'] = $path;
 			}

@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 *
 */
 
-define('APP_BASE_URL', 'http://localhost:8080/staffing_panel');
+define('APP_BASE_URL', 'https://staffing.inficaresoft.com/');
 
 /*
 * --------------------------------------------------------------------------
@@ -43,11 +43,11 @@ define('APP_DB_HOSTNAME', 'localhost');
 /**
  * The username used to connect to the database
  */
-define('APP_DB_USERNAME', 'root');
+define('APP_DB_USERNAME', 'staffingdev');
 /**
  * The password used to connect to the database
  */
-define('APP_DB_PASSWORD', '');
+define('APP_DB_PASSWORD', 'StaffingDev#2913');
 /**
  * The name of the database you want to connect to
  */
