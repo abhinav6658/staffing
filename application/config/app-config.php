@@ -18,7 +18,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 *
 */
 
-define('APP_BASE_URL', 'https://staffing.inficaresoft.com/');
+define('APP_BASE_URL', 'http://mistrionduty.com/');
 
 /*
 * --------------------------------------------------------------------------
